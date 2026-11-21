@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff3f8">
+<title>Aditi — Creative Studio</title>
+<style>
+:root{--pink:#e86b9b;--deep:#9f4268;--ink:#49313d;--muted:#896f7c;--cream:#fffafc;--line:#f4dce7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}.brand{font-family:Georgia,serif;font-size:25px;font-weight:bold;color:var(--deep)}.brand span{color:var(--pink)}
+.navlinks{display:flex;gap:26px;font-size:14px;color:var(--muted)}.navlinks a:hover{color:var(--pink)}
+.hero{padding:64px 0 58px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:36px}
+.eyebrow{color:var(--deep);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+h1{font:clamp(44px,7vw,76px)/.98 Georgia,serif;letter-spacing:-2px;margin:18px 0;color:#563448}
+h1 em{color:var(--pink);font-weight:400}.hero p{font-size:17px;line-height:1.75;color:var(--muted);max-width:500px}
+.btn{display:inline-block;background:var(--pink);color:white;padding:14px 22px;border-radius:30px;font-size:14px;font-weight:700;margin-top:12px;box-shadow:0 8px 22px #e86b9b35}.btn:hover{background:var(--deep)}
+.hero-art{min-height:350px;position:relative;display:grid;place-items:center}
+.blob{position:absolute;width:290px;height:290px;border-radius:48% 52% 60% 40%;background:linear-gradient(145deg,#ffd9e8,#f5a9c7);transform:rotate(-12deg)}
+.poster{position:relative;width:220px;height:280px;background:#fff9f3;border:8px solid white;box-shadow:0 20px 50px #8d48652b;transform:rotate(7deg);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px}
+.poster small{letter-spacing:3px;color:#a86a7d;font-size:9px}.poster strong{font:38px/1 Georgia,serif;color:#a94f72;margin:15px 0}.poster span{font:italic 15px Georgia;color:#c27b91}.spark{position:absolute;color:#fff;font-size:36px}.s1{top:32px;right:40px}.s2{bottom:38px;left:36px;color:#df78a1}
+section{padding:54px 0}.section-head{text-align:center;margin-bottom:28px}.section-head h2{font:40px Georgia,serif;margin:9px 0;color:#563448}.section-head p{color:var(--muted);margin:0}
+.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:25px 0 30px}.filter{border:1px solid var(--line);background:white;color:var(--muted);padding:9px 17px;border-radius:24px;cursor:pointer;font:inherit;font-size:13px}.filter.active,.filter:hover{background:#f9dce8;color:var(--deep);border-color:#f3c2d5}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s;box-shadow:0 8px 25px #75475b0a}.card:hover{transform:translateY(-5px);box-shadow:0 15px 32px #75475b16}.thumb{height:230px;display:grid;place-items:center;padding:20px;overflow:hidden}
+.art{width:155px;height:185px;box-shadow:0 12px 25px #61354b25;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;position:relative}
+.art b{font:29px/1.05 Georgia,serif}.art small{font-size:8px;letter-spacing:2px;margin-bottom:12px}.art span{font:italic 12px Georgia;margin-top:12px}
+.t1{background:#f9dce7}.a1{background:#fff7f0;color:#a94f72;border:5px solid white}.a1:after{content:"";position:absolute;inset:8px;border:1px solid #e9b9c9}
+.t2{background:#e9e1f7}.a2{background:#594c71;color:#fff3f8;border-radius:80px 80px 5px 5px}.a2 b{font-size:26px}
+.t3{background:#f8e9d9}.a3{background:#e8a9a0;color:#fff9f1;transform:rotate(-4deg)}.a3 b{font-size:27px}
+.t4{background:#e4eee5}.a4{background:#fff;color:#59745e;border:1px solid #b7cbb8}.a4 b{font-size:26px}
+.t5{background:#f3e0e8}.a5{background:#9c5573;color:#fff5f8;border-radius:8px}.a5 b{font-size:27px}
+.t6{background:#e4eafa}.a6{background:#fdfcff;color:#63749c;border:5px double #aab7d5}.a6 b{font-size:26px}
+.info{padding:16px 17px 18px}.info h3{margin:0 0 5px;font:20px Georgia,serif}.info p{margin:0;color:var(--muted);font-size:13px}
+.about{background:#fff1f6;border-radius:26px;padding:36px;display:grid;grid-template-columns:.7fr 1.3fr;gap:28px;align-items:center}.about-mark{font:76px Georgia,serif;color:#e58aad;text-align:center}.about h2{font:34px Georgia,serif;margin:0 0 10px}.about p{color:var(--muted);line-height:1.8;margin:0}
+.contact{text-align:center;padding:65px 20px}.contact h2{font:42px Georgia,serif;margin:10px 0}.contact p{color:var(--muted);line-height:1.7}
+footer{border-top:1px solid var(--line);padding:22px 0;color:#9b8290;font-size:12px;text-align:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:42px 0 25px;text-align:center}.hero p{margin:0 auto}.hero-art{min-height:300px}.grid{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr;text-align:center}.navlinks{gap:13px;font-size:12px}}
+@media(max-width:480px){.wrap{width:min(100% - 28px,1120px)}.brand{font-size:21px}.navlinks{gap:10px}.grid{grid-template-columns:1fr 1fr;gap:11px}.thumb{height:175px;padding:12px}.art{width:125px;height:145px}.art b{font-size:23px}.info{padding:12px}.info h3{font-size:17px}.info p{font-size:11px}.section-head h2{font-size:34px}.about{padding:25px 19px}}
+</style>
+</head>
+<body>
+<header class="wrap">
+<nav><a class="brand" href="#">aditi<span>.</span></a><div class="navlinks"><a href="#work">My work</a><a href="#about">About</a><a href="#contact">Say hello</a></div></nav>
+</header>
+<main>
+<div class="wrap hero">
+<div><div class="eyebrow">♡ A little corner of creativity</div><h1>Designs made<br>with <em>love.</em></h1><p>Hi, I'm Aditi! Welcome to my creative space — a collection of pretty ideas, thoughtful layouts and Canva creations.</p><a class="btn" href="#work">Explore my designs&nbsp; →</a></div>
+<div class="hero-art"><div class="blob"></div><div class="poster"><small>THE CREATIVE EDIT</small><strong>dream<br>in pink</strong><span>make something lovely</span></div><div class="spark s1">✦</div><div class="spark s2">✧</div></div>
+</div>
+<section id="work"><div class="wrap"><div class="section-head"><div class="eyebrow">The portfolio</div><h2>A few of my favourites</h2><p>A growing collection of designs from my Canva studio.</p></div>
+<div class="filters"><button class="filter active" data-filter="all">All designs</button><button class="filter" data-filter="social">Social posts</button><button class="filter" data-filter="quotes">Quote cards</button><button class="filter" data-filter="posters">Posters</button></div>
+<div class="grid">
+<article class="card" data-category="posters"><div class="thumb t1"><div class="art a1"><small>YOU ARE MAGIC</small><b>Bloom<br>beautifully</b><span>one day at a time</span></div></div><div class="info"><h3>Bloom Beautifully</h3><p>Poster design · Pastel collection</p></div></article>
+<article class="card" data-category="social"><div class="thumb t2"><div class="art a2"><small>YOUR DAILY REMINDER</small><b>take a<br>little break</b><span>you deserve it ♡</span></div></div><div class="info"><h3>Daily Reminder</h3><p>Social post · Lavender mood</p></div></article>
+<article class="card" data-category="posters"><div class="thumb t3"><div class="art a3"><small>THE GOOD LIFE</small><b>Choose<br>joy</b><span>every little moment</span></div></div><div class="info"><h3>Choose Joy</h3><p>Mini poster · Warm tones</p></div></article>
+<article class="card" data-category="quotes"><div class="thumb t4"><div class="art a4"><small>A NOTE TO SELF</small><b>Keep<br>growing</b><span>at your own pace</span></div></div><div class="info"><h3>Keep Growing</h3><p>Quote card · Soft green</p></div></article>
+<article class="card" data-category="social"><div class="thumb t5"><div class="art a5"><small>HELLO, LOVELY</small><b>Good<br>things<br>are coming</b><span>stay hopeful ✧</span></div></div><div class="info"><h3>Good Things</h3><p>Social post · Pink edit</p></div></article>
+<article class="card" data-category="quotes"><div class="thumb t6"><div class="art a6"><small>REMEMBER THIS</small><b>Small steps<br>count too</b><span>progress is progress</span></div></div><div class="info"><h3>Small Steps</h3><p>Quote card · Blue calm</p></div></article>
+</div></div></section>
+<section id="about"><div class="wrap about"><div class="about-mark">A.</div><div><div class="eyebrow">A little about me</div><h2>Creativity is my happy place.</h2><p>I'm Aditi, a beginner creator who loves exploring colours, fonts and layouts in Canva. This portfolio is where I share my design experiments and keep track of my creative journey. Thanks for stopping by! ♡</p></div></div></section>
+<section id="contact" class="contact"><div class="eyebrow">Let's connect</div><h2>Have a lovely day! ♡</h2><p>Thanks for visiting my portfolio.<br>Come back soon to see what I'm creating next.</p><a class="btn" href="#work">Back to my designs ↑</a></section>
+</main>
+<footer><div class="wrap">Made with ♡ by Aditi · Canva design portfolio</div></footer>
+<script>
+const buttons=document.querySelectorAll('.filter'),cards=document.querySelectorAll('.card');
+buttons.forEach(button=>button.addEventListener('click',()=>{buttons.forEach(b=>b.classList.remove('active'));button.classList.add('active');const f=button.dataset.filter;cards.forEach(card=>card.style.display=(f==='all'||card.dataset.category===f)?'':'none')}));
+</script>
+</body>
+</html>
